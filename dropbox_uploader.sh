@@ -826,7 +826,7 @@ function db_download
 
         #If the destination is a directory, the file will be download into
         if [[ -d $DST ]]; then
-            DST="$DST/$SRC"
+	    DST=$DST/$(basename "$SRC")
         fi
 
         db_download_file "$SRC" "$DST"
